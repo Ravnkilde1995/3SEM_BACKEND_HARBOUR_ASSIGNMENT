@@ -21,7 +21,7 @@ public class Boat {
     public Boat() {
     }
 
-    public Boat(String brand, String make, String name, String image, List<Owner> owners) {
+    public Boat(String brand, String make, String name, String image) {
         this.brand = brand;
         this.make = make;
         this.name = name;

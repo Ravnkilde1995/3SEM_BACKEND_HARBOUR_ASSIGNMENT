@@ -14,13 +14,14 @@ public class Owner {
     private String name;
     private String address;
     private int phone;
+    @ManyToMany
     private List<Boat> boats;
 
 
     public Owner() {
     }
 
-    public Owner(String name, String address, int phone, List<Boat> boats) {
+    public Owner(String name, String address, int phone) {
         this.name = name;
         this.address = address;
         this.phone = phone;

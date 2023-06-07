@@ -1,5 +1,7 @@
 package unitTesting;
 
+import entities.Boat;
+import entities.Owner;
 import entities.RenameMe;
 import facades.FacadeExample;
 import org.junit.jupiter.api.AfterAll;
@@ -10,6 +12,9 @@ import utils.EMF_Creator;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class UnitTesting {
 
@@ -21,8 +26,8 @@ public class UnitTesting {
 
     @BeforeAll
     public static void setUpClass() {
-        emf = EMF_Creator.createEntityManagerFactoryForTest();
-        facade = FacadeExample.getFacadeExample(emf);
+        //emf = EMF_Creator.createEntityManagerFactoryForTest();
+        //facade = FacadeExample.getFacadeExample(emf);
     }
 
     @AfterAll
@@ -50,5 +55,30 @@ public class UnitTesting {
     @AfterEach
     public void tearDown() {
 //        Remove any data after each test was run
+    }
+
+    public static void main(String[] args) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+        EntityManager em = emf.createEntityManager();
+
+        Boat b1 = new Boat("107", "Bianca", "Luna", "billed");
+        Boat b2 = new Boat("24", "Bandholm", "Tris", "billed");
+        Boat b3 = new Boat("101", "Bianca ", "Aphrodite", "billed");
+
+        Owner o1 = new Owner("Hans", "langgade 22", 21212121);
+        Owner o2 = new Owner("Troels", "lilletoften 117", 21212121);
+        Owner o3 = new Owner("Erik", "lilletoften 120", 21212121);
+
+        b1.addOwners(o1);
+        b2.addOwners(o2);
+        b3.addOwners(o3);
+        b1.addOwners(o3);
+
+        em.getTransaction().begin();
+        em.persist(b1);
+        em.persist(b2);
+        em.persist(b3);
+        em.getTransaction().commit();
+        em.close();
     }
 }
