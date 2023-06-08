@@ -17,6 +17,9 @@ public class Boat {
     private String image;
     @ManyToMany(mappedBy = "boats", cascade = CascadeType.PERSIST)
     private List<Owner> owners;
+    @ManyToOne
+    private Harbour harbour;
+
 
     public Boat() {
     }
@@ -27,6 +30,15 @@ public class Boat {
         this.name = name;
         this.image = image;
         this.owners = new ArrayList<>();
+
+    }
+
+    public Harbour getHarbour() {
+        return harbour;
+    }
+
+    public void setHarbour(Harbour harbour) {
+        this.harbour = harbour;
     }
 
     public List<Owner> getOwners() {
@@ -79,4 +91,6 @@ public class Boat {
     public void setId(Long id) {
         this.id = id;
     }
+
+
 }

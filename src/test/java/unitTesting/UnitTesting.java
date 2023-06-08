@@ -1,6 +1,7 @@
 package unitTesting;
 
 import entities.Boat;
+import entities.Harbour;
 import entities.Owner;
 import entities.RenameMe;
 import facades.FacadeExample;
@@ -69,16 +70,29 @@ public class UnitTesting {
         Owner o2 = new Owner("Troels", "lilletoften 117", 21212121);
         Owner o3 = new Owner("Erik", "lilletoften 120", 21212121);
 
+        // tester owners og både
         b1.addOwners(o1);
         b2.addOwners(o2);
         b3.addOwners(o3);
         b1.addOwners(o3);
 
+        //tester på havn der har både
+        Harbour h1 = new Harbour("rungsted havn", "rungsted havne vej 57",500);
+        Harbour h2 = new Harbour("København havn", "københavnvej 51",300);
+
+        h1.addBoats(b1);
+        h2.addBoats(b2);
+        h2.addBoats(b3);
+
         em.getTransaction().begin();
         em.persist(b1);
         em.persist(b2);
         em.persist(b3);
+        em.persist(h1);
+        em.persist(h2);
         em.getTransaction().commit();
         em.close();
+
+        System.out.println("Hvad ligger der i rungstedhavn: " + h1.getBoats());
     }
 }
