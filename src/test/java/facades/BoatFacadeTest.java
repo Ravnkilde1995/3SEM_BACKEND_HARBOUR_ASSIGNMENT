@@ -39,7 +39,7 @@ public class BoatFacadeTest {
         EntityManager em = emf.createEntityManager();
         try {
             em.getTransaction().begin();
-            em.createNamedQuery("RenameMe.deleteAllRows").executeUpdate();
+            em.createNamedQuery("Boat.deleteAllRows").executeUpdate();
             em.persist(new Boat("107", "Bianca", "Luna", "billed"));
             em.getTransaction().commit();
         } finally {
@@ -64,7 +64,7 @@ public class BoatFacadeTest {
         EntityManager em = emf.createEntityManager();
         try {
             em.getTransaction().begin();
-            em.createNamedQuery("RenameMe.deleteAllRows").executeUpdate();
+            em.createNamedQuery("Boat.deleteAllRows").executeUpdate();
             Boat b1 = new Boat("24", "Bandholm", "Tina", "billed");
             Boat b2 = new Boat("101", "Bianca", "Aphrodite", "billed");
             em.persist(b1);

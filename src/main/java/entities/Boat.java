@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@NamedQuery(name = "Boat.deleteAllRows", query = "DELETE from Boat")
 @Table(name = "boat")
 public class Boat {
     @Id
