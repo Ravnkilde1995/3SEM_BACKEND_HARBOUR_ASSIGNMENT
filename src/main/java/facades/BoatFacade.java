@@ -26,11 +26,11 @@ public class BoatFacade {
         return instance;
     }
 
-    private EntityManager getEntityManager() {
+    private static EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
 
-    public BoatDTO create(BoatDTO bd) {
+    public static BoatDTO create(BoatDTO bd) {
         Boat b = new Boat(bd.getMake(), bd.getBrand(), bd.getName(), bd.getImage());
         EntityManager em = getEntityManager();
         try {

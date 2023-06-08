@@ -1,9 +1,6 @@
 package facades;
 
-import dtos.BoatDTO;
 import entities.Boat;
-import entities.Owner;
-import entities.RenameMe;
 import org.junit.jupiter.api.*;
 import utils.EMF_Creator;
 
