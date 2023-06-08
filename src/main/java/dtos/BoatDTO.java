@@ -4,6 +4,7 @@ import entities.Boat;
 import entities.Owner;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -22,6 +23,12 @@ public class BoatDTO implements Serializable {
         this.name = b.getName();
         this.image = b.getImage();
         this.owners = b.getOwners().stream().map(o -> o.getName()).collect(Collectors.toList());
+    }
+
+    public static List<BoatDTO> getDtos(List<Boat> boats){
+        List<BoatDTO> boatDTOS = new ArrayList();
+        boats.forEach(boat->boatDTOS.add(new BoatDTO(boat)));
+        return boatDTOS;
     }
 
     public List<String> getOwners() {

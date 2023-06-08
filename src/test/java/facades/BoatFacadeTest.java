@@ -1,5 +1,6 @@
 package facades;
 
+import dtos.BoatDTO;
 import entities.Boat;
 import entities.Owner;
 import entities.RenameMe;
@@ -73,7 +74,17 @@ public class BoatFacadeTest {
         } finally {
             em.close();
         }
-
     }
+
+    @Test
+    public void update() throws Exception {
+
+        /*BoatDTO bdto = new BoatDTO();
+        bdto =
+
+        assertEquals(1, facade.updateBoat(1, bdto));
+        */
+    }
+
 
 }
