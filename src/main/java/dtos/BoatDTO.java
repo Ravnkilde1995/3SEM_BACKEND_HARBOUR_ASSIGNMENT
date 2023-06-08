@@ -15,19 +15,13 @@ public class BoatDTO implements Serializable {
     private final String image;
     private final List<String> owners;
 
-   /* public BoatDTO(String brand, String make, String name, String image) {
-        this.brand = brand;
-        this.make = make;
-        this.name = name;
-        this.image = image;
-    }*/
 
     public BoatDTO(Boat b) {
         this.brand = b.getBrand();
         this.make = b.getMake();
         this.name = b.getName();
         this.image = b.getImage();
-        this.owners = b.getOwners().stream().map(o -> o.getName().collect(Collectors.toList()));
+        this.owners = b.getOwners().stream().map(o -> o.getName()).collect(Collectors.toList());
     }
 
     public List<String> getOwners() {

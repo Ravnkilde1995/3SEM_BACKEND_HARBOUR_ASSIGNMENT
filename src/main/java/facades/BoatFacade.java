@@ -1,9 +1,8 @@
 package facades;
 
 import dtos.BoatDTO;
-import dtos.RenameMeDTO;
+
 import entities.Boat;
-import entities.RenameMe;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,7 +12,7 @@ public class BoatFacade {
     private static BoatFacade instance;
     private static EntityManagerFactory emf;
 
-    private BoatFacade(){
+    private BoatFacade() {
 
     }
 
@@ -29,7 +28,7 @@ public class BoatFacade {
         return emf.createEntityManager();
     }
 
-    public BoatDTO create(BoatDTO bd){
+    public BoatDTO create(BoatDTO bd) {
         Boat b = new Boat(bd.getMake(), bd.getBrand(), bd.getName(), bd.getImage());
         EntityManager em = getEntityManager();
         try {
@@ -41,4 +40,16 @@ public class BoatFacade {
         }
         return new BoatDTO(b);
     }
+
+    public long getBoatCount(){
+        EntityManager em = getEntityManager();
+        try{
+            long boatCount = (long)em.createQuery("SELECT COUNT(r) FROM Boat r").getSingleResult();
+            return boatCount;
+        }finally{
+            em.close();
+        }
+    }
+
+
 }

@@ -12,7 +12,7 @@ public class OwnerDTO implements Serializable {
     private final String name;
     private final String address;
     private final int phone;
-    private final List<Boat> boats;
+    private final List<BoatDTO> boats;
 
     public OwnerDTO(Owner o) {
         this.name = o.getName();
@@ -21,7 +21,7 @@ public class OwnerDTO implements Serializable {
         this.boats = o.getBoats().stream().map(b -> new BoatDTO(b)).collect(Collectors.toList());
     }
 
-    public List<Boat> getBoats() {
+    public List<BoatDTO> getBoats() {
         return boats;
     }
 
