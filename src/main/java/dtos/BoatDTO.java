@@ -10,6 +10,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class BoatDTO implements Serializable {
+    private long id;
     private final String brand;
     private final String make;
     private final String name;
@@ -18,6 +19,7 @@ public class BoatDTO implements Serializable {
 
 
     public BoatDTO(Boat b) {
+        this.id = b.getId();
         this.brand = b.getBrand();
         this.make = b.getMake();
         this.name = b.getName();
@@ -49,6 +51,14 @@ public class BoatDTO implements Serializable {
 
     public String getImage() {
         return image;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     @Override

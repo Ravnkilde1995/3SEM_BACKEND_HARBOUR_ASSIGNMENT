@@ -24,9 +24,9 @@
             <property name="eclipselink.logging.parameters" value="true"/>
             
             <!-- In PRODUCTION the values below, will be overriden by utils.EMF_Creator -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://ravn-kilde.com:3306/boat?serverTimezone=UTC"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/boat?serverTimezone=UTC"/>
             <property name="javax.persistence.jdbc.user" value="dev"/>
-            <property name="javax.persistence.jdbc.password" value="dat2023!"/>
+            <property name="javax.persistence.jdbc.password" value="ax2"/>
             
         </properties>
     </persistence-unit>
@@ -41,9 +41,9 @@
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="eclipselink.canonicalmodel.subpackage" value="ghy636765"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://ravn-kilde.com:3306/startcode_test?serverTimezone=UTC"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/startcode_test?serverTimezone=UTC"/>
             <property name="javax.persistence.jdbc.user" value="dev"/>
-            <property name="javax.persistence.jdbc.password" value="dat2023!"/>
+            <property name="javax.persistence.jdbc.password" value="ax2"/>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
             
              <!-- You can raise the logging level to one of the following values CONFIG, FINE, FINER, FINEST, ALL for better,

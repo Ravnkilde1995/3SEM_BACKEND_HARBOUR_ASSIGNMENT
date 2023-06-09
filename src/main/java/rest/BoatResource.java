@@ -49,6 +49,15 @@ public class BoatResource {
         }
     }
 
+    @GET
+    @Path("{id}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public String getHobbyById(@PathParam("id") long id) {
+        BoatDTO bdto = boatFacade.getBoutById(id);
+        bdto.setId(id);
+        return GSON.toJson(bdto);
+    }
+
     @POST
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes({MediaType.APPLICATION_JSON})
@@ -57,4 +66,17 @@ public class BoatResource {
         Boat b = new Boat(bd.getMake(), bd.getBrand(), bd.getName(), bd.getImage());
         return Response.ok(GSON.toJson(new BoatDTO(b))).build();
     }
+
+
+    @PUT
+    @Produces({MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Path("{id}")
+    public Response updateBoat(@PathParam("id") long id, String input) throws Exception {
+        BoatDTO bdto = GSON.fromJson(input, BoatDTO.class);
+        bdto = boatFacade.updateBoat(id, bdto);
+        bdto.setId(id);
+        return Response.ok().entity(bdto).build();
+    }
+
 }
