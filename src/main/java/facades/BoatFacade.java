@@ -78,6 +78,15 @@ public class BoatFacade {
         return new BoatDTO(boat);
     }
 
+    public void removeBoat(long id) {
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        Boat boat = em.find(Boat.class, id);
+        em.remove(boat);
+        em.getTransaction().commit();
+        em.close();
+    }
+
     public long getBoatCount() {
         EntityManager em = getEntityManager();
         try {

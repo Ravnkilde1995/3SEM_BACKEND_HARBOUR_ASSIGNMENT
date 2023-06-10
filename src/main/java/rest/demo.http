@@ -1,6 +1,9 @@
 GET http://localhost:8080/api/info
 
 ###
+POST http://localhost:8080/api/user
+Content-Type: application/json
+###
 GET https://ravn-kilde.com/tomcat/dat3_proeveEksamen/api/boat
 
 ###

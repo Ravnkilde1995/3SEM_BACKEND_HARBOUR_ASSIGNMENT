@@ -52,7 +52,7 @@ public class BoatResource {
     @GET
     @Path("{id}")
     @Produces({MediaType.APPLICATION_JSON})
-    public String getHobbyById(@PathParam("id") long id) {
+    public String getBoatById(@PathParam("id") long id) {
         BoatDTO bdto = boatFacade.getBoutById(id);
         bdto.setId(id);
         return GSON.toJson(bdto);
@@ -79,4 +79,14 @@ public class BoatResource {
         return Response.ok().entity(bdto).build();
     }
 
+   /*  @DELETE
+    @Produces({MediaType.APPLICATION_JSON})
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Path("{id}")
+    public Response deleteBoat(@PathParam("id") long id, String input) throws Exception {
+       /* BoatDTO bdto = GSON.fromJson(input, BoatDTO.class);
+        bdto = boatFacade.removeBoat(id);
+        bdto.setId(id);
+        return Response.ok().entity(bdto).build();
+    }*/
 }

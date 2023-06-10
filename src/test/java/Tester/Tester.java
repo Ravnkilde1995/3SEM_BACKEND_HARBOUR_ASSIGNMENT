@@ -1,4 +1,4 @@
-package unitTesting;
+package Tester;
 
 import entities.Boat;
 import entities.Harbour;
@@ -9,7 +9,6 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import utils.EMF_Creator;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -17,12 +16,12 @@ import javax.persistence.Persistence;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class UnitTesting {
+public class Tester {
 
-    private static EntityManagerFactory emf;
+    /*private static EntityManagerFactory emf;
     private static FacadeExample facade;
 
-    public UnitTesting() {
+    public Tester() {
     }
 
     @BeforeAll
@@ -56,7 +55,7 @@ public class UnitTesting {
     @AfterEach
     public void tearDown() {
 //        Remove any data after each test was run
-    }
+    }*/
 
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
