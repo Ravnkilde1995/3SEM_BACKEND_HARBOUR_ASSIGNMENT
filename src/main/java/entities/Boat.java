@@ -1,6 +1,7 @@
 package entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +33,9 @@ public class Boat {
         this.image = image;
         this.owners = new ArrayList<>();
 
+    }
+
+    public Boat(Boat b) {
     }
 
     public Harbour getHarbour() {
@@ -94,4 +98,15 @@ public class Boat {
     }
 
 
+    @Override
+    public String toString() {
+        return "Boat{" +
+                "id=" + id +
+                ", brand='" + brand + '\'' +
+                ", make='" + make + '\'' +
+                ", name='" + name + '\'' +
+                ", image='" + image + '\'' +
+                ", harbour=" + harbour +
+                '}';
+    }
 }

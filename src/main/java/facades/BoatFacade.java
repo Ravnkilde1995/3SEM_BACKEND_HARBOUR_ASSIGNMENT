@@ -31,7 +31,8 @@ public class BoatFacade {
     }
 
     public static BoatDTO create(BoatDTO bd) {
-        Boat b = new Boat(bd.getMake(), bd.getBrand(), bd.getName(), bd.getImage());
+        Boat b = new Boat(bd.getBrand(), bd.getMake(), bd.getName(), bd.getImage());
+        System.out.println(b +  "her hwr her her Facade");
         EntityManager em = getEntityManager();
         try {
             em.getTransaction().begin();

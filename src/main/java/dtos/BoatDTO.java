@@ -17,8 +17,7 @@ public class BoatDTO implements Serializable {
     private final String image;
     private final List<String> owners;
 
-
-    public BoatDTO(Boat b) {
+   public BoatDTO(Boat b) {
         this.id = b.getId();
         this.brand = b.getBrand();
         this.make = b.getMake();
@@ -33,7 +32,7 @@ public class BoatDTO implements Serializable {
         return boatDTOS;
     }
 
-    public List<String> getOwners() {
+   public List<String> getOwners() {
         return owners;
     }
 

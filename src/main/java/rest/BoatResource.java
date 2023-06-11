@@ -63,10 +63,9 @@ public class BoatResource {
     @Consumes({MediaType.APPLICATION_JSON})
     public Response createBoat(String content) {
         BoatDTO bd = GSON.fromJson(content, BoatDTO.class);
-        Boat b = new Boat(bd.getMake(), bd.getBrand(), bd.getName(), bd.getImage());
-        return Response.ok(GSON.toJson(new BoatDTO(b))).build();
+        BoatDTO b = boatFacade.create(bd);
+        return Response.ok(GSON.toJson(new Boat(b.getBrand(),b.getMake(),b.getName(),b.getImage()))).build();
     }
-
 
     @PUT
     @Produces({MediaType.APPLICATION_JSON})
