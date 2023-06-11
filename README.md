@@ -19,8 +19,6 @@
 - open the Database tab and create a new data source (remember to point to a database event though this is already written in the persistence unit. This is necessary in order to use the JPQL console)
 - in the persistence window right click the pu or an entity and choose "console"
 - write a jpql query in the console and execute it.
-### In netbeans it is much simpler
-- just right click the pu and choose: "Run JPQL query"
 
 ### Create model in workbench (cannot be done from Intellij - No model designer yet)
 - file-> new model
