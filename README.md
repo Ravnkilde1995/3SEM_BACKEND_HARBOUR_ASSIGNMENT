@@ -12,11 +12,6 @@
 ### Preconditions
 *In order to use this code, you should have a local developer setup + a "matching" droplet on Digital Ocean as described in the 3. semester guidelines* 
 
-### Getting Started
-
-This document explains how to use this code (build, test and deploy), locally with maven, and remotely with maven controlled by Github actions
- - [How to use](https://docs.google.com/document/d/1rymrRWF3VVR7ujo3k3sSGD_27q73meGeiMYtmUtYt6c/edit?usp=sharing)
-
 ### JPA snippets
 
 ### Setup in Intellij
@@ -24,8 +19,6 @@ This document explains how to use this code (build, test and deploy), locally wi
 - open the Database tab and create a new data source (remember to point to a database event though this is already written in the persistence unit. This is necessary in order to use the JPQL console)
 - in the persistence window right click the pu or an entity and choose "console"
 - write a jpql query in the console and execute it.
-### In netbeans it is much simpler
-- just right click the pu and choose: "Run JPQL query"
 
 ### Create model in workbench (cannot be done from Intellij - No model designer yet)
 - file-> new model
@@ -52,10 +45,6 @@ This document explains how to use this code (build, test and deploy), locally wi
   - tick tables to include
   - open tables to see columns and add the ones with mapped type: Collection<SomeEntity> and SomeEntity
   - click OK.
-
-### In netbeans it is much easier
-- Right click project name -> new -> persistence -> Entity classes From Database -> choose database connection from list -> add the tables you need -> Finish
-
 
 # TODO
 - JPA Annotations
